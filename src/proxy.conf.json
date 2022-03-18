@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target": "http://wizardsapi-env.eba-i9qbaatz.us-east-1.elasticbeanstalk.com/",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

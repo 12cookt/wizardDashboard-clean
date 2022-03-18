@@ -13,6 +13,7 @@ import {
   NbSelectModule,
   NbIconModule, } from '@nebular/theme';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     NbIconModule,
     NbUserModule,
     NbProgressBarModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ]
 })
 export class DashboardModule { }
