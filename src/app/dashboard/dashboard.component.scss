@@ -1,0 +1,52 @@
+@import '../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+@import '../@theme/styles/styles';
+@import '../@theme/styles/_layout';
+@import '../@theme/styles/_overrides';
+@import '../@theme/styles/pace.theme';
+
+
+
+
+.attribute_block {
+  text-align: center;
+}
+
+#level {
+  padding-top: 3%;
+  padding-right: 5%;
+  float: right;
+  font-size: 1.875em;
+}
+
+#level_rank {
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+#upgrade_button {
+  background-color: green;
+  color: white;
+  border-radius: 12px;
+}
+
+#dexterity {
+  background-color: pink;
+
+}
+
+@include nb-install-component() {
+  .solar-card nb-card-header {
+    border: none;
+    padding-bottom: 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    ngx-traffic {
+      display: none;
+    }
+  }
+}
+
+
