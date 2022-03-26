@@ -11,7 +11,8 @@ import {
   NbUserModule,
   NbRadioModule,
   NbSelectModule,
-  NbIconModule, } from '@nebular/theme';
+  NbIconModule,
+  NbMenuModule, } from '@nebular/theme';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -32,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     NbUserModule,
     NbProgressBarModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NbMenuModule,
   ]
 })
 export class DashboardModule { }
