@@ -15,24 +15,24 @@ declare global {
 export class HeaderComponent implements OnInit {
 
   loggedIn: boolean;
-  constructor() { this.loggedIn = false }
+  showAccount: string;
+  constructor() {
+    this.loggedIn = false
+    this.showAccount = '';
+  }
 
   ngOnInit(): void {
-    const ethereumButton = document.querySelector('.enableEthereumButton');
-    const showAccount = document.querySelector('.showAccount');
+  }
 
-    ethereumButton!.addEventListener('click', () => {
-      getAccount();
-    });
-
-    async function getAccount(this: any) {
-      const accounts: Array<any> | null | undefined = await window.ethereum.request({ method: 'eth_requestAccounts' });
-      if (accounts) {
-        const account = accounts[0];
-        showAccount!.innerHTML = account;
-        this.loggedIn = true;
-      }
+  async getAccount() {
+    console.log(this.loggedIn);
+    const accounts: Array<any> | null | undefined = await window.ethereum.request({ method: 'eth_requestAccounts' });
+    if (accounts) {
+      const account = accounts[0];
+      this.showAccount = account;
+      this.loggedIn = true;
     }
+    return this.loggedIn;
   }
 
   navigateHome(){
