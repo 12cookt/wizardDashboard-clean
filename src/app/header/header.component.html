@@ -9,7 +9,7 @@
 
   <div class="header-container">
     <div>
-      <button class="enableEthereumButton">Enable Ethereum</button>
-      <h2>Account: <span class="showAccount"></span></h2>
+      <button *ngIf="!loggedIn" class="enableEthereumButton">Enable Ethereum</button>
+      <h2 *ngIf="loggedIn">Account: <span class="showAccount"></span></h2>
     </div>
 </div>

@@ -14,29 +14,33 @@ declare global {
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  loggedIn: boolean;
+  constructor() { this.loggedIn = false }
 
   ngOnInit(): void {
     const ethereumButton = document.querySelector('.enableEthereumButton');
     const showAccount = document.querySelector('.showAccount');
-    
-    // ethereumButton.addEventListener('click', () => {
-    //   getAccount();
-    //});
-    
-    // async function getAccount() {
-    //   const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-    //   const account = accounts[0];
-    //   showAccount.innerHTML = account;
-    // }
+
+    ethereumButton!.addEventListener('click', () => {
+      getAccount();
+    });
+
+    async function getAccount(this: any) {
+      const accounts: Array<any> | null | undefined = await window.ethereum.request({ method: 'eth_requestAccounts' });
+      if (accounts) {
+        const account = accounts[0];
+        showAccount!.innerHTML = account;
+        this.loggedIn = true;
+      }
+    }
   }
 
   navigateHome(){
     console.log("hello");
   }
-
   toggleSidebar(){
-    console.log("toggled");
+    console.log("hello2");
   }
+
 
 }
