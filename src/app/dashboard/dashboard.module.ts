@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import {
-  NbProgressBarModule, 
-  NbCardModule, 
-  NbListModule, 
+  NbProgressBarModule,
+  NbCardModule,
+  NbListModule,
   NbActionsModule,
   NbButtonModule,
   NbTabsetModule,
@@ -34,7 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     NbProgressBarModule,
     FormsModule,
     HttpClientModule,
-    NbMenuModule,
+    NbMenuModule
   ]
 })
 export class DashboardModule { }

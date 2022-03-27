@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MetaMaskInpageProvider } from "@metamask/providers";
+import {LoginService} from "../services/login.service";
+import {Router} from "@angular/router";
 
 declare global {
   interface Window {
@@ -14,25 +16,26 @@ declare global {
 })
 export class HeaderComponent implements OnInit {
 
-  loggedIn: boolean;
-  showAccount: string;
-  constructor() {
-    this.loggedIn = false
-    this.showAccount = '';
+  private _loginService: LoginService;
+
+  constructor(loginService: LoginService, private router: Router) {
+    this._loginService = loginService;
   }
 
   ngOnInit(): void {
   }
 
-  async getAccount() {
-    console.log(this.loggedIn);
-    const accounts: Array<any> | null | undefined = await window.ethereum.request({ method: 'eth_requestAccounts' });
-    if (accounts) {
-      const account = accounts[0];
-      this.showAccount = account;
-      this.loggedIn = true;
-    }
-    return this.loggedIn;
+  get loginService(): LoginService {
+    return this._loginService;
+  }
+
+  getAccount() {
+    this._loginService.getAccount();
+    this.routeToDashboard();
+  }
+
+  routeToDashboard() {
+      this.router.navigateByUrl('/home')
   }
 
   navigateHome(){
