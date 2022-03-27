@@ -14,7 +14,7 @@
 
   <div class="col-lg-6">
     <nb-card class="">
-      
+
           <div style="display: block; margin-bottom: 10px;">
             <label>Wizard Type</label>
             <img src="assets/images/fire.png" style="width: 55px; position: relative;">
@@ -25,7 +25,7 @@
             <div>
               <label id="wiz_attribute">Strength</label>
               <progress id="strength" value="32" max="100">32%</progress>
-              <span id="level_rank">LEVEL: 5</span>
+              <span id="level_rank">LEVEL: {{this.wizard.str}}</span>
               <button nbButton hero outline status="success" size="tiny" >
                 UPGRADE
               </button>
@@ -63,7 +63,7 @@
               </button>
             </div>
           </div>
-          
+
     </nb-card>
   </div>
 
@@ -108,7 +108,7 @@
 <div class="row">
   <div class="col-md-4">
     <nb-card>
-      Wizard test: {{testCall}}
+      Wizard test:
     </nb-card>
   </div>
 </div>

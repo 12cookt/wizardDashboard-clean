@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ApiWizard } from "../models/apiWizard";
+import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-dashboard',
@@ -7,14 +9,40 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  testCall: any;
-  constructor(private http: HttpClient) { }
 
-  ngOnInit(): void {
-    this.http.get<any>('http://wizardsapi-env.eba-i9qbaatz.us-east-1.elasticbeanstalk.com/wizards/1').subscribe(data=>{
-      this.testCall = data.id;
-      console.log(this.testCall);
-    })
+  wizard: ApiWizard = {
+    "id": 1,
+    "name": '',
+    "profession": '',
+    "str": 1,
+    "dex": 1,
+    "intel": 1,
+    "wis": 1,
+    "chari": 1,
+    "spec": ''
+  };
+
+
+  constructor(private http: HttpClient) {
   }
 
+  ngOnInit(): void {
+
+
+    this.getWizard(1).subscribe(
+      (response) => {
+        console.log('response received')
+        this.wizard = response;
+        console.log(this.wizard)
+      },
+      (error => {
+        console.log('Request failed with an error')
+      })
+    )
+
+  }
+
+  getWizard(id: number): Observable<ApiWizard> {
+    return this.http.get<ApiWizard>(`http://wizardsapi-env.eba-i9qbaatz.us-east-1.elasticbeanstalk.com/wizards/${id}`);
+  }
 }
