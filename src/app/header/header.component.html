@@ -1,3 +1,5 @@
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
 <div class="header-container">
     <div class="logo-container">
       <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
@@ -11,7 +13,7 @@
 
   <div class="header-container">
     <div>
-      <button *ngIf="!loggedIn" class="enableEthereumButton" (click)="getAccount()">Enable Ethereum</button>
-      <h2 *ngIf="loggedIn">Account: {{this.showAccount}}<span class="showAccount"></span></h2>
+      <button *ngIf="!loggedIn" class="enableEthereumButton walletbutton" (click)="getAccount()" style="background-color: black">CONNECT WALLET</button>
+        <span class="showAccount" *ngIf="loggedIn">Account: {{this.showAccount}}</span>
     </div>
 </div>
