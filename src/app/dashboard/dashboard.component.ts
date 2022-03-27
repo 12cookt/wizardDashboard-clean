@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Wizard} from "../models/wizard";
+import { ApiWizard } from "../models/apiWizard";
+import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-dashboard',
@@ -8,39 +9,40 @@ import {Wizard} from "../models/wizard";
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  get currentWizard(): Wizard {
-    return this._currentWizard;
-  }
 
-  set currentWizard(value: Wizard) {
-    this._currentWizard = value;
-  }
-
-  private _currentWizard!: Wizard;
-  // wizardType: any;
-  // level: number;
-  // strength: number;
-  // speed: number;
-  // stamina: number;
-  // intelligence: number;
-  // spells: number;
+  wizard: ApiWizard = {
+    "id": 1,
+    "name": '',
+    "profession": '',
+    "str": 1,
+    "dex": 1,
+    "intel": 1,
+    "wis": 1,
+    "chari": 1,
+    "spec": ''
+  };
 
 
   constructor(private http: HttpClient) {
   }
 
   ngOnInit(): void {
-    this.getWizard(1);
+
+
+    this.getWizard(1).subscribe(
+      (response) => {
+        console.log('response received')
+        this.wizard = response;
+        console.log(this.wizard)
+      },
+      (error => {
+        console.log('Request failed with an error')
+      })
+    )
+
   }
 
-  getWizard(wizardId: number): void {
-    this.http.get<any>(`http://wizardsapi-env.eba-i9qbaatz.us-east-1.elasticbeanstalk.com/wizards/${wizardId}`).subscribe(data=>{
-      console.log(data);
-      let wiz: any = JSON.parse(data);
-      this._currentWizard wiz.map(() => {
-        });
-      });
-      console.log(this._currentWizard);
-    }
-
+  getWizard(id: number): Observable<ApiWizard> {
+    return this.http.get<ApiWizard>(`http://wizardsapi-env.eba-i9qbaatz.us-east-1.elasticbeanstalk.com/wizards/${id}`);
+  }
 }
