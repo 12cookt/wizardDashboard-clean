@@ -5,7 +5,7 @@ import {WelcomeComponent} from "../welcome/welcome.component";
 import {AuthGuard} from "./guards/auth.guard";
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'home', component: DashboardComponent},
   { path: 'login', component: WelcomeComponent }
 ];
