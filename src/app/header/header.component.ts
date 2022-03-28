@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MetaMaskInpageProvider } from "@metamask/providers";
 import {LoginService} from "../services/login.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 declare global {
   interface Window {
@@ -17,12 +17,15 @@ declare global {
 export class HeaderComponent implements OnInit {
 
   private _loginService: LoginService;
+  return: string = '';
 
-  constructor(loginService: LoginService, private router: Router) {
+  constructor(loginService: LoginService, private router: Router, private route: ActivatedRoute) {
     this._loginService = loginService;
   }
 
   ngOnInit(): void {
+    this.route.queryParams
+      .subscribe(params => this.return = params['return'] || '/home');
   }
 
   get loginService(): LoginService {
@@ -30,12 +33,7 @@ export class HeaderComponent implements OnInit {
   }
 
   getAccount() {
-    this._loginService.getAccount();
-    this.routeToDashboard();
-  }
-
-  routeToDashboard() {
-      this.router.navigateByUrl('/home')
+    this._loginService.getAccount().then((route) => this._loginService.routeToDashboard(this.return));
   }
 
   navigateHome(){
@@ -45,5 +43,5 @@ export class HeaderComponent implements OnInit {
     console.log("hello2");
   }
 
-
 }
+

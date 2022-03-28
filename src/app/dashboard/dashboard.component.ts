@@ -24,12 +24,10 @@ export class DashboardComponent implements OnInit {
   };
 
 
-  constructor(private http: HttpClient, private loginService: LoginService) {
+  constructor(private http: HttpClient, public loginService: LoginService) {
   }
 
   ngOnInit(): void {
-
-
     this.getWizard(1).subscribe(
       (response) => {
         console.log('response received')
@@ -40,7 +38,6 @@ export class DashboardComponent implements OnInit {
         console.log('Request failed with an error')
       })
     )
-
   }
 
   getWizard(id: number): Observable<ApiWizard> {
