@@ -44,20 +44,16 @@ export class DashboardComponent implements OnInit {
         console.log('Request failed with an error')
       })
     )
-    console.log(this.getUsersNFTs());
+
+    this.getUsersNFTs().subscribe(data => console.log(data.result));
+
   }
 
   getWizard(id: number): Observable<ApiWizard> {
     return this.http.get<ApiWizard>(`http://wizardsapi-env.eba-i9qbaatz.us-east-1.elasticbeanstalk.com/wizards/${id}`);
   }
 
-  getUsersNFTs() {
-    return new Promise(resolve => {
-      this.http.get('https://deep-index.moralis.io/api/v2/' + this.loginService.showAccount + '/nft/0x5139cfEE9E8533d9f52be27BE183ec60c7222274?chain=eth&format=decimal', this.httpOptions).subscribe(data => {
-        resolve(data);
-      },   err => {
-        console.log(err);
-      });
-    });
+  getUsersNFTs(): Observable<any> {
+      return this.http.get('https://deep-index.moralis.io/api/v2/' + this.loginService.showAccount + '/nft/0x5139cfEE9E8533d9f52be27BE183ec60c7222274?chain=eth&format=decimal', this.httpOptions);
   }
 }

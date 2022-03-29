@@ -13,7 +13,7 @@
 
   <div class="header-container">
     <div>
-      <button *ngIf="!this.loginService.isLoggedIn" class="enableEthereumButton walletbutton" (click)="getAccount()" style="background-color: black">CONNECT WALLET</button>
+      <button *ngIf="!this.loginService.isLoggedIn" class="enableEthereumButton walletbutton" (click)="getAccount()" routerLink="/home" style="background-color: black">CONNECT WALLET</button>
         <span class="showAccount" *ngIf="this.loginService.isLoggedIn">Account: {{this.loginService.showAccount}}</span>
     </div>
 </div>
