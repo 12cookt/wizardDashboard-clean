@@ -1,6 +1,6 @@
 <label for="wizards">Wizard:</label>
-<select name="wizards" id="wizards">
-<option *ngFor = "let test of wizards$" [value]="test.token_id">{{test.token_id}}</option>
+<select name="wizards" id="wizards"  (change)="loadSelectedWizard($any($event.target).value)">
+<option *ngFor = "let wizard of wizards$, let i = index" value="{{wizard.token_id}},{{i}}">{{wizard.token_id}}</option>
 </select>
 
 <div class="row">
@@ -100,13 +100,6 @@
       Nero is part of the Genesis of Ronaine - the group that is helping Ryno search for his home of Etheen. Ryno's father Cultheer is brothers with Keggar, Nero's father, making them first cousins. This was discovered after Nero's brother Mikello performed a Dream Weaving to help Ryno recover his memories.
       </textarea>
       <br><br>
-    </nb-card>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-4">
-    <nb-card>
-      Wizard test:
     </nb-card>
   </div>
 </div>

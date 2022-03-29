@@ -3,6 +3,8 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { ApiWizard } from "../models/apiWizard";
 import { Observable } from "rxjs";
 import {LoginService} from "../services/login.service";
+import {splitAtPeriod} from "@angular/compiler/src/util";
+import {splitNsName} from "@angular/compiler";
 
 
 interface Metadata {
@@ -39,6 +41,7 @@ export class DashboardComponent implements OnInit {
     "chari": 1,
     "spec": ''
   };
+  selectedIndex: any;
 
   constructor(private http: HttpClient, public loginService: LoginService) {
   }
@@ -73,5 +76,25 @@ export class DashboardComponent implements OnInit {
   getUsersNFTs(): Observable<any> {
       return this.http.get('https://deep-index.moralis.io/api/v2/' + this.loginService.showAccount + '/nft/0x5139cfEE9E8533d9f52be27BE183ec60c7222274?chain=eth&format=decimal', this.httpOptions);
   }
+
+  loadSelectedWizard(id: string){
+    console.log(id);
+    let currentWizard: string[] = id.split(',');
+    let tokenID: number = parseInt(currentWizard[0]);
+    let index: number = parseInt(currentWizard[1]);
+    this.getWizard(tokenID).subscribe(
+      (response) => {
+        console.log('response received')
+        this.wizard = response;
+        console.log(this.wizard)
+      },
+      (error => {
+        console.log('Request failed with an error')
+      })
+    )
+      this.imgUrl = JSON.parse(this.wizards$[index].metadata)
+
+  }
+
 
 }
