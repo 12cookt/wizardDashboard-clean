@@ -3,22 +3,18 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { ApiWizard } from "../models/apiWizard";
 import { Observable } from "rxjs";
 import {LoginService} from "../services/login.service";
-import {WizardToken} from "../models/WizardToken";
-import {Meta} from "@angular/platform-browser";
-
 
 
 interface Metadata {
   image: string
 }
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
-
 
   httpOptions = {
   headers: new HttpHeaders({
@@ -31,8 +27,6 @@ export class DashboardComponent implements OnInit {
   imgUrl: Metadata = {
     image : ''
   };
-
-  //metadata: any = '';
 
   wizard: ApiWizard = {
     "id": 1,
@@ -77,10 +71,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getUsersNFTs(): Observable<any> {
-      return this.http.get('https://deep-index.moralis.io/api/v2/0xC52A04bE765FaBD6Da4693a77F189D1b0F67825b/nft/0x5139cfEE9E8533d9f52be27BE183ec60c7222274?chain=eth&format=decimal', this.httpOptions);
+      return this.http.get('https://deep-index.moralis.io/api/v2/' + this.loginService.showAccount + '/nft/0x5139cfEE9E8533d9f52be27BE183ec60c7222274?chain=eth&format=decimal', this.httpOptions);
   }
 
-  getNFTImage(): void {
-
-  }
 }
