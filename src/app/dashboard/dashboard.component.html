@@ -1,114 +1,112 @@
-<label for="wizards">Wizard:</label>
-<select name="wizards" id="wizards">
-  <option>Nero</option>
-  <option>Cultheer</option>
-  <option>Turgen</option>
-</select>
-
-<div class="row">
-  <div class="col-lg-4">
-    <nb-card class="">
-      <img src="assets/images/nero.png">
-    </nb-card>
+<div style="background-image: url('assets/images/wizardsLowMap.jpg'); background-size: cover;
+      background-repeat: no-repeat;">
+  <div style="padding-top: 50px; padding-left: 50px;">
+    <label for="wizards">Wizard:</label>
+    <select name="wizards" id="wizards">
+      <option>Nero</option>
+      <option>Cultheer</option>
+      <option>Turgen</option>
+    </select>
   </div>
 
-  <div class="col-lg-6">
-    <nb-card class="">
-
-          <div style="display: block; margin-bottom: 10px;">
-            <label>Wizard Type</label>
-            <img src="assets/images/fire.png" style="width: 55px; position: relative;">
-            <span id="level">Level 4</span>
-          </div>
-
-          <div class="attribute_block">
-            <div>
-              <label id="wiz_attribute">Strength</label>
-              <progress id="strength" value="32" max="100">32%</progress>
-              <span id="level_rank">LEVEL: {{this.wizard.str}}</span>
-              <button nbButton hero outline status="success" size="tiny" >
-                UPGRADE
-              </button>
-            </div>
-            <div>
-              <label id="wiz_attribute">Speed</label>
-              <progress id="speed" value="32" max="100">32%</progress>
-              <span id="level_rank">LEVEL: 5</span>
-              <button nbButton hero outline status="success" size="tiny" >
-                UPGRADE
-              </button>
-            </div>
-            <div >
-              <label id="wiz_attribute">Stamina</label>
-              <progress id="stamina" value="32" max="100">32%</progress>
-              <span id="level_rank">LEVEL: 5</span>
-              <button nbButton hero outline status="success" size="tiny" >
-                UPGRADE
-              </button>
-            </div>
-            <div >
-              <label id="wiz_attribute">Intelligence</label>
-              <progress id="intelligence" value="32" max="100">32%</progress>
-              <span id="level_rank">LEVEL: 5</span>
-              <button nbButton hero outline status="success" size="tiny" >
-                UPGRADE
-              </button>
-            </div>
-            <div >
-              <label id="wiz_attribute">Spells</label>
-              <progress id="spells" value="32" max="100">32%</progress>
-              <span id="level_rank">LEVEL: 5</span>
-              <button nbButton hero outline status="success" size="tiny" >
-                UPGRADE
-              </button>
-            </div>
-          </div>
-
-    </nb-card>
-  </div>
-
-  <div class="col-lg-2">
-    <div class="col">
+  <div class="row" style="padding-left: 50px">
+    <div class="col-lg-4">
       <nb-card class="">
-        <nb-card-header>SPELLS</nb-card-header>
-        <nb-list>
-          <nb-list-item>LUCIS</nb-list-item>
-          <nb-list-item>ETHENOS</nb-list-item>
-          <nb-list-item>CRUXIX</nb-list-item>
-          <nb-list-item>APEREOS</nb-list-item>
-        </nb-list>
+        <img src="assets/images/nero.png">
       </nb-card>
     </div>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-md-4">
-    <nb-card class="">
-      <nb-card-header>Token and XP</nb-card-header>
+    <div class="col-lg-6">
+      <nb-card class="">
+
+        <div style="display: block; margin-bottom: 10px;">
+          <label>Wizard Type</label>
+          <img src="assets/images/fire.png" style="width: 55px; position: relative;">
+          <span id="level">Level 4</span>
+        </div>
+
+        <div class="attribute_block">
+          <div>
+            <label id="wiz_attribute">Strength</label>
+            <progress id="strength" value="32" max="100">32%</progress>
+            <span id="level_rank">LEVEL: {{this.wizard.str}}</span>
+            <button nbButton hero outline status="success" size="tiny">
+              UPGRADE
+            </button>
+          </div>
+          <div>
+            <label id="wiz_attribute">Speed</label>
+            <progress id="speed" value="32" max="100">32%</progress>
+            <span id="level_rank">LEVEL: 5</span>
+            <button nbButton hero outline status="success" size="tiny">
+              UPGRADE
+            </button>
+          </div>
+          <div>
+            <label id="wiz_attribute">Stamina</label>
+            <progress id="stamina" value="32" max="100">32%</progress>
+            <span id="level_rank">LEVEL: 5</span>
+            <button nbButton hero outline status="success" size="tiny">
+              UPGRADE
+            </button>
+          </div>
+          <div>
+            <label id="wiz_attribute">Intelligence</label>
+            <progress id="intelligence" value="32" max="100">32%</progress>
+            <span id="level_rank">LEVEL: 5</span>
+            <button nbButton hero outline status="success" size="tiny">
+              UPGRADE
+            </button>
+          </div>
+          <div>
+            <label id="wiz_attribute">Spells</label>
+            <progress id="spells" value="32" max="100">32%</progress>
+            <span id="level_rank">LEVEL: 5</span>
+            <button nbButton hero outline status="success" size="tiny">
+              UPGRADE
+            </button>
+          </div>
+        </div>
+
+      </nb-card>
+    </div>
+
+    <div class="col-lg-2">
+      <div class="col">
+        <nb-card class="">
+          <nb-card-header>SPELLS</nb-card-header>
+          <nb-list>
+            <nb-list-item>LUCIS</nb-list-item>
+            <nb-list-item>ETHENOS</nb-list-item>
+            <nb-list-item>CRUXIX</nb-list-item>
+            <nb-list-item>APEREOS</nb-list-item>
+          </nb-list>
+        </nb-card>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="padding-left: 50px">
+    <div class="col-md-4">
+      <nb-card class="">
+        <nb-card-header>Token and XP</nb-card-header>
         <nb-list>
           <nb-list-item>XP Available</nb-list-item>
           <nb-list-item>Tokens Available</nb-list-item>
           <nb-list-item>Stats Boosted</nb-list-item>
         </nb-list>
-    </nb-card>
-  </div>
-  <div class="col-md-8">
-    <nb-card>
-      <label for="lore">Wizard Lore</label>
-      <textarea id="lore" name="lore" rows="8" cols="60" style="background-color: #ece3ff;">
+      </nb-card>
+    </div>
+    <div class="col-md-8">
+      <nb-card>
+        <label for="lore">Wizard Lore</label>
+        <textarea id="lore" name="lore" rows="8" cols="60" style="background-color: #ece3ff;">
       Nero is the second born of The King of Ronaine - Keggar. Nero is the Minister of Borneth, a region on Ronaine. He has exceptional talents in politics, often working on behalf of his father to keep peace within the realm.
 
       Nero is part of the Genesis of Ronaine - the group that is helping Ryno search for his home of Etheen. Ryno's father Cultheer is brothers with Keggar, Nero's father, making them first cousins. This was discovered after Nero's brother Mikello performed a Dream Weaving to help Ryno recover his memories.
       </textarea>
-      <br><br>
-    </nb-card>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-4">
-    <nb-card>
-      Wizard test:
-    </nb-card>
+        <br><br>
+      </nb-card>
+    </div>
   </div>
 </div>
