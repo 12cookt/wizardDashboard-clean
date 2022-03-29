@@ -9,6 +9,7 @@ import { NbThemeModule, NbLayoutModule, NbCardModule, NbIconComponent, NbIconMod
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { WelcomeComponent } from './welcome/welcome.component';
+import Moralis from "moralis";
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     DashboardModule,
     NbIconModule,
     NbSidebarModule.forRoot(),
-    NbMenuModule.forRoot()
+    NbMenuModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

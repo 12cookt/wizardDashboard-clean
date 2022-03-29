@@ -2,8 +2,15 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import {Moralis} from "moralis";
+
 export const environment = {
-  production: false
+  production: false,
+  moralis: {
+    /* Moralis init code */
+    appId: "qenbTGv8kPczbZF4a8nZ2gkmtsXheWD4lVpA76Mh",
+    serverUrl: "https://dub3pnxxoxo5.usemoralis.com:2053/server"
+  }
 };
 
 /*
