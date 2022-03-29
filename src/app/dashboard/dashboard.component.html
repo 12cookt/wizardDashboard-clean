@@ -1,16 +1,12 @@
-{{this.loginService.showAccount}}
-
 <label for="wizards">Wizard:</label>
 <select name="wizards" id="wizards">
-  <option>Nero</option>
-  <option>Cultheer</option>
-  <option>Turgen</option>
+<option *ngFor = "let test of wizards$" [value]="test.token_id">{{test.token_id}}</option>
 </select>
 
 <div class="row">
   <div class="col-lg-4">
     <nb-card class="">
-      <img src="assets/images/nero.png">
+      <img src="{{this.imgUrl.image}}">
     </nb-card>
   </div>
 
