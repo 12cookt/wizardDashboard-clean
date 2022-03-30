@@ -1,3 +1,4 @@
+<div *ngIf="this.hasWizard">
 <label for="wizards">Wizard:</label>
 <select name="wizards" id="wizards"  (change)="loadSelectedWizard($any($event.target).value)">
 <option *ngFor = "let wizard of wizards$, let i = index" value="{{wizard.token_id}},{{i}}">{{wizard.token_id}}</option>
@@ -14,12 +15,24 @@
     <nb-card class="">
 
           <div style="display: block; margin-bottom: 10px;">
-            <label>Wizard Type: {{this.wizard.type}}</label>
-            <img src="assets/images/fire.png" style="width: 55px; position: relative;">
+            <label>Wizard Type: </label>
+            <img src='assets/images/{{this.wizard.type}}.png' style="width: 55px; position: relative;">
             <span id="level">Level {{this.wizard.level}}</span>
           </div>
 
           <div class="attribute_block">
+            <div>
+              <label id="name">Name: </label>
+              <span> {{this.wizard.name}}</span>
+            </div>
+            <div>
+              <label id="profession">Profession: </label>
+              <span> {{this.wizard.profession}}</span>
+            </div>
+            <div>
+              <label id="region">Region: </label>
+              <span> {{this.wizard.region}}</span>
+            </div>
             <div>
               <label id="wiz_attribute">Strength</label>
               <progress id="strength" value="{{this.wizard.str}}" max="100">{{this.wizard.str}}%</progress>
@@ -96,8 +109,14 @@
       <label for="journal">Wizard Journal</label>
       <div id="journal" name="journal" rows="8" cols="60" style="background-color: #ece3ff;">
       Be careful wizard, your choices matter. They will appear here.
+        <br>.
+        <br>.
+        <br>.
+        <br>.
+        <br>.
       </div>
       <br><br>
     </nb-card>
   </div>
+</div>
 </div>

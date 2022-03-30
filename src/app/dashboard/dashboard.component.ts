@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { ApiWizard } from "../models/apiWizard";
 import { Observable } from "rxjs";
 import {LoginService} from "../services/login.service";
+import {Exception} from "node-sass";
 
 
 interface Metadata {
@@ -22,6 +23,8 @@ export class DashboardComponent implements OnInit {
   })
 };
 
+  hasWizard: boolean = false;
+
   wizards$: Array<any> = [];
 
   imgUrl: Metadata = {
@@ -39,7 +42,7 @@ export class DashboardComponent implements OnInit {
     "spells": 1,
     "stamina": 1,
     "str": 1,
-    "type": ""
+    "type": "light"
   };
   selectedIndex: any;
 
@@ -47,31 +50,20 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getWizard(1).subscribe(
-      (response) => {
-        console.log('response received')
-        this.wizard = response;
-        console.log(this.wizard)
-      },
-      (error => {
-        console.log('Request failed with an error')
-      })
-    )
 
-    this.getUsersNFTs().subscribe(data => {
-      console.log(data.result);
-      this.wizards$ = data.result;
-      console.log(this.wizards$[0].token_address)
-      console.log(this.wizards$[0].metadata);
-      let selectElem = document.getElementById('wizards');
-      this.imgUrl = JSON.parse(this.wizards$[0].metadata)
-      console.log(this.imgUrl.image);
-    });
+      this.getUsersNFTs().subscribe(data => {
+        if (data.result.length == 0)
+          window.location.href = 'https://mint.wizardsofetheen.com/';
+        else
+          this.hasWizard = true;
+        this.wizards$ = data.result;
+        this.imgUrl = JSON.parse(this.wizards$[0].metadata)
+      });
 
   }
 
   getWizard(id: number): Observable<ApiWizard> {
-    return this.http.get<ApiWizard>(`http://wizard2.us-east-1.elasticbeanstalk.com/wizards/${{id}}`);
+    return this.http.get<ApiWizard>(`http://wizard2.us-east-1.elasticbeanstalk.com/wizards/${id}`);
   }
 
   getUsersNFTs(): Observable<any> {
