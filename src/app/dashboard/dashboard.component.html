@@ -14,15 +14,15 @@
     <nb-card class="">
 
           <div style="display: block; margin-bottom: 10px;">
-            <label>Wizard Type</label>
+            <label>Wizard Type: {{this.wizard.type}}</label>
             <img src="assets/images/fire.png" style="width: 55px; position: relative;">
-            <span id="level">Level 4</span>
+            <span id="level">Level {{this.wizard.level}}</span>
           </div>
 
           <div class="attribute_block">
             <div>
               <label id="wiz_attribute">Strength</label>
-              <progress id="strength" value="32" max="100">32%</progress>
+              <progress id="strength" value="{{this.wizard.str}}" max="100">{{this.wizard.str}}%</progress>
               <span id="level_rank">LEVEL: {{this.wizard.str}}</span>
               <button nbButton hero outline status="success" size="tiny" >
                 UPGRADE
@@ -30,32 +30,32 @@
             </div>
             <div>
               <label id="wiz_attribute">Speed</label>
-              <progress id="speed" value="32" max="100">32%</progress>
-              <span id="level_rank">LEVEL: 5</span>
+              <progress id="speed" value="{{this.wizard.speed}}" max="100">{{this.wizard.speed}}%</progress>
+              <span id="level_rank">LEVEL: {{this.wizard.speed}}</span>
               <button nbButton hero outline status="success" size="tiny" >
                 UPGRADE
               </button>
             </div>
             <div >
               <label id="wiz_attribute">Stamina</label>
-              <progress id="stamina" value="32" max="100">32%</progress>
-              <span id="level_rank">LEVEL: 5</span>
+              <progress id="stamina" value="{{this.wizard.stamina}}" max="100">{{this.wizard.stamina}}%</progress>
+              <span id="level_rank">LEVEL: {{this.wizard.stamina}}</span>
               <button nbButton hero outline status="success" size="tiny" >
                 UPGRADE
               </button>
             </div>
             <div >
               <label id="wiz_attribute">Intelligence</label>
-              <progress id="intelligence" value="32" max="100">32%</progress>
-              <span id="level_rank">LEVEL: 5</span>
+              <progress id="intelligence" value="{{this.wizard.intel}}" max="100">{{this.wizard.intel}}%</progress>
+              <span id="level_rank">LEVEL: {{this.wizard.intel}}</span>
               <button nbButton hero outline status="success" size="tiny" >
                 UPGRADE
               </button>
             </div>
             <div >
               <label id="wiz_attribute">Spells</label>
-              <progress id="spells" value="32" max="100">32%</progress>
-              <span id="level_rank">LEVEL: 5</span>
+              <progress id="spells" value="{{this.wizard.spells}}" max="100">{{this.wizard.spells}}%</progress>
+              <span id="level_rank">LEVEL: {{this.wizard.spells}}</span>
               <button nbButton hero outline status="success" size="tiny" >
                 UPGRADE
               </button>
@@ -93,12 +93,10 @@
   </div>
   <div class="col-md-8">
     <nb-card>
-      <label for="lore">Wizard Lore</label>
-      <textarea id="lore" name="lore" rows="8" cols="60" style="background-color: #ece3ff;">
-      Nero is the second born of The King of Ronaine - Keggar. Nero is the Minister of Borneth, a region on Ronaine. He has exceptional talents in politics, often working on behalf of his father to keep peace within the realm.
-
-      Nero is part of the Genesis of Ronaine - the group that is helping Ryno search for his home of Etheen. Ryno's father Cultheer is brothers with Keggar, Nero's father, making them first cousins. This was discovered after Nero's brother Mikello performed a Dream Weaving to help Ryno recover his memories.
-      </textarea>
+      <label for="journal">Wizard Journal</label>
+      <div id="journal" name="journal" rows="8" cols="60" style="background-color: #ece3ff;">
+      Be careful wizard, your choices matter. They will appear here.
+      </div>
       <br><br>
     </nb-card>
   </div>

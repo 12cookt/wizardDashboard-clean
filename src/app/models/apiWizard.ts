@@ -1,11 +1,13 @@
 export interface ApiWizard {
   "id": number;
+  "intel": number;
+  "level": number;
   "name": string;
   "profession": string;
+  "region": string;
+  "speed": number;
+  "spells": number;
+  "stamina": number;
   "str": number;
-  "dex": number;
-  "intel": number;
-  "wis": number;
-  "chari": number;
-  "spec": string;
+  "type": string;
 }

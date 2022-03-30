@@ -30,14 +30,16 @@ export class DashboardComponent implements OnInit {
 
   wizard: ApiWizard = {
     "id": 1,
-    "name": '',
-    "profession": '',
-    "str": 1,
-    "dex": 1,
     "intel": 1,
-    "wis": 1,
-    "chari": 1,
-    "spec": ''
+    "level": 1,
+    "name": "",
+    "profession": "",
+    "region": "",
+    "speed": 1,
+    "spells": 1,
+    "stamina": 1,
+    "str": 1,
+    "type": ""
   };
   selectedIndex: any;
 
@@ -61,6 +63,7 @@ export class DashboardComponent implements OnInit {
       this.wizards$ = data.result;
       console.log(this.wizards$[0].token_address)
       console.log(this.wizards$[0].metadata);
+      let selectElem = document.getElementById('wizards');
       this.imgUrl = JSON.parse(this.wizards$[0].metadata)
       console.log(this.imgUrl.image);
     });
@@ -68,7 +71,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getWizard(id: number): Observable<ApiWizard> {
-    return this.http.get<ApiWizard>(`http://wizard2.us-east-1.elasticbeanstalk.com/wizards/${id}`);
+    return this.http.get<ApiWizard>(`http://wizard2.us-east-1.elasticbeanstalk.com/wizards/${{id}}`);
   }
 
   getUsersNFTs(): Observable<any> {
