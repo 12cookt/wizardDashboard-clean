@@ -3,8 +3,6 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { ApiWizard } from "../models/apiWizard";
 import { Observable } from "rxjs";
 import {LoginService} from "../services/login.service";
-import {splitAtPeriod} from "@angular/compiler/src/util";
-import {splitNsName} from "@angular/compiler";
 
 
 interface Metadata {
@@ -70,7 +68,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getWizard(id: number): Observable<ApiWizard> {
-    return this.http.get<ApiWizard>(`http://wizardsapi-env.eba-i9qbaatz.us-east-1.elasticbeanstalk.com/wizards/${id}`);
+    return this.http.get<ApiWizard>(`http://wizard2.us-east-1.elasticbeanstalk.com/wizards/${id}`);
   }
 
   getUsersNFTs(): Observable<any> {
