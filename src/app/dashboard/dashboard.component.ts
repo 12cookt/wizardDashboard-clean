@@ -59,7 +59,7 @@ export class DashboardComponent implements OnInit {
         this.wizards$ = data.result;
         this.imgUrl = JSON.parse(this.wizards$[0].metadata);
         console.log(this.wizards$);
-        this.getWizard(1).subscribe(
+        this.getWizard(this.wizards$[0].token_id).subscribe(
           (response) => {
             console.log('response received')
             this.wizard = response;
