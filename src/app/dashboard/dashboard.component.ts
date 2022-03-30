@@ -52,12 +52,18 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
 
       this.getUsersNFTs().subscribe(data => {
-        //if (data.result.length == 0)
-          //window.location.href = 'https://mint.wizardsofetheen.com/';
-        //else
+        if (data.result.length == 0)
+          window.location.href = 'https://mint.wizardsofetheen.com/';
+        else
           this.hasWizard = true;
         this.wizards$ = data.result;
-        this.imgUrl = JSON.parse(this.wizards$[0].metadata)
+        this.imgUrl = JSON.parse(this.wizards$[0].metadata);
+        console.log(this.wizards$);
+        this.getWizard(1).subscribe(
+          (response) => {
+            console.log('response received')
+            this.wizard = response;
+          })
       });
 
   }
