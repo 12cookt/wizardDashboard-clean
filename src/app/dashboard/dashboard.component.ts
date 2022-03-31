@@ -58,14 +58,11 @@ export class DashboardComponent implements OnInit {
           this.hasWizard = true;
         this.wizards$ = data.result;
         this.imgUrl = JSON.parse(this.wizards$[0].metadata);
-        console.log(this.wizards$);
         this.getWizard(this.wizards$[0].token_id).subscribe(
           (response) => {
-            console.log('response received')
             this.wizard = response;
           })
       });
-
   }
 
   getWizard(id: number): Observable<ApiWizard> {
@@ -77,23 +74,17 @@ export class DashboardComponent implements OnInit {
   }
 
   loadSelectedWizard(id: string){
-    console.log(id);
     let currentWizard: string[] = id.split(',');
     let tokenID: number = parseInt(currentWizard[0]);
     let index: number = parseInt(currentWizard[1]);
     this.getWizard(tokenID).subscribe(
       (response) => {
-        console.log('response received')
         this.wizard = response;
-        console.log(this.wizard)
       },
       (error => {
         console.log('Request failed with an error')
       })
     )
       this.imgUrl = JSON.parse(this.wizards$[index].metadata)
-
   }
-
-
 }
