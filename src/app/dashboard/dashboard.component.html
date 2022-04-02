@@ -1,9 +1,9 @@
 <div *ngIf="this.hasWizard">
   <div class="row" style="padding-left: 50px; padding-top: 50px">
     <div class="col-lg-4">
-      <nb-card class="">
+      <nb-card>
         <div style="padding-top: 5px; padding-left: 20px;">
-          <label for="wizards" style="padding-right: 5px; font-family: Georgia; font-size: 12pt;">Wizard:</label>
+          <label for="wizards" class="wizard_dropDown_label">Wizard:</label>
           <select name="wizards" id="wizards" (change)="loadSelectedWizard($any($event.target).value)">
             <option *ngFor="let wizard of wizards$, let i = index"
                     value="{{wizard.token_id}},{{i}}">{{wizard.token_id}}</option>
@@ -15,9 +15,9 @@
     </div>
 
     <div class="col-lg-6">
-      <nb-card class="">
+      <nb-card>
 
-        <div style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 20px">
+        <div class="wizard_type_and_level_container">
           <div style="align-items: center">
             <label style="font-size: 24pt; font-family: Georgia; padding-left: 30px;">Wizard Type: </label>
             <img src='assets/images/{{this.wizard.type}}.png' style="width: 55px; position: relative; padding-bottom: 10px">
