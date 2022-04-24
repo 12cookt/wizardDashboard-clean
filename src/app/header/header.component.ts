@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MetaMaskInpageProvider } from "@metamask/providers";
-import {LoginService} from "../services/login.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import { MetaMaskInpageProvider } from '@metamask/providers';
+import { LoginService } from '../services/login.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NbSidebarService } from '@nebular/theme';
 
 declare global {
   interface Window {
@@ -12,20 +13,25 @@ declare global {
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-
   private _loginService: LoginService;
   return: string = '';
 
-  constructor(loginService: LoginService, private router: Router, private route: ActivatedRoute) {
+  constructor(
+    loginService: LoginService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private readonly sidebarService: NbSidebarService
+  ) {
     this._loginService = loginService;
   }
 
   ngOnInit(): void {
-    this.route.queryParams
-      .subscribe(params => this.return = params['return'] || '/home');
+    this.route.queryParams.subscribe(
+      (params) => (this.return = params['return'] || '/home')
+    );
   }
 
   get loginService(): LoginService {
@@ -33,15 +39,16 @@ export class HeaderComponent implements OnInit {
   }
 
   getAccount() {
-    this._loginService.getAccount().then((route) => this._loginService.routeToDashboard(this.return));
+    this._loginService
+      .getAccount()
+      .then((route) => this._loginService.routeToDashboard(this.return));
   }
 
-  navigateHome(){
-    console.log("hello");
+  navigateHome() {
+    console.log('hello');
   }
-  toggleSidebar(){
-    console.log("hello2");
+  toggleSidebar() {
+    this.sidebarService.toggle();
+    return false;
   }
-
 }
-

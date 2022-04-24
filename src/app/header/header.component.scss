@@ -1,6 +1,6 @@
 @import '~bootstrap/scss/mixins/breakpoints';
 @import '~@nebular/theme/styles/global/breakpoints';
-@import '../styles/themes';
+@import '../Styles/themes';
 
 @include nb-install-component() {
   display: flex;
@@ -10,7 +10,9 @@
   .logo-container {
     display: flex;
     align-items: center;
-    width: calc(#{nb-theme(sidebar-width)} - #{nb-theme(header-padding)});
+    // width: calc(#{nb-theme(sidebar-width)} - #{nb-theme(header-padding)});
+    max-width: 32rem;
+    width: 100%;
   }
 
   nb-action {
@@ -44,6 +46,28 @@
       display:block;
       margin:0.2em auto;
     }
+  }
+  .disabledWall{
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.1em 0.1em 0;
+    border:0.16em solid rgba(255,255,255,0);
+    border-radius:2em;
+    box-sizing: border-box;border-color: rgba(255,255,255,1);
+    text-decoration:none;
+    font-family: monospace;
+    font-weight:300;
+    color:#FFFFFF;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    cursor: default !important;
+    transition: all 0.2s;
+  }
+  .disabledWall:hover{
+    border-color: rgba(255,255,255,1);
+  }
+  .disabledWall:focus{
+    border: none !important; 
   }
 
   .showAccount {
@@ -100,5 +124,39 @@
     nb-select {
       display: none;
     }
+  }
+}
+.disabledWall {
+  border-color: transparent !important;
+}
+span.disabledWall:hover {
+  border-color: white !important;
+}
+.actionBtn.white button, .actionBtn.white .disabledWall {
+  min-width: 13.75rem;
+  color: #352D59 !important;
+  padding: 0.835rem !important;
+  border-radius: 0.375rem !important;
+  background: #fff !important;
+  font-size: 1.25rem;
+  margin-top: 0.25rem;
+}
+.actionBtn.white .disabledWall{
+}
+.logo-container img{
+  width: 100%;
+}
+.logo-container .sidebar-toggle {
+  max-width: 2rem;
+  width: 100%;
+  display: inline-block;
+  padding-right: 0 !important;
+}
+nb-layout-header nav{
+  height: auto !important;
+}
+@media screen and (max-width: 500px){
+  .logo-container img{
+    width: 30rem;
   }
 }

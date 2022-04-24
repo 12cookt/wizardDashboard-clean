@@ -3,20 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './routes/app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbCardModule, NbIconComponent, NbIconModule,NbSidebarModule, NbMenuModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbCardModule, NbIconModule,NbSidebarModule, NbMenuModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { WelcomeComponent } from './welcome/welcome.component';
 import Moralis from "moralis";
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    WelcomeComponent
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,

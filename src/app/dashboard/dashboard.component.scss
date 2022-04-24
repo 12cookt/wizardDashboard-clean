@@ -69,3 +69,238 @@ progress::-webkit-progress-value {
     }
   }
 }
+.headerBgWHite{
+  background: #FFFFFF;
+  padding: 1.313rem 1.563rem;
+  border-top-left-radius: 0.938rem;
+  border-top-right-radius: 0.938rem;
+}
+.headerBgWHite h4{
+  margin-bottom: 0;
+}
+.cardTitle{
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #352D59;
+}
+.flexBox{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cardImg img{
+  width: 100%;
+}
+.colwizard{
+  max-width: 27.938rem;
+  width: 100%;
+  margin-left: 0.438rem;
+  margin-right: 0.438rem
+}
+.colWizardType{
+  // max-width: 47.375rem;
+  max-width: 45rem;
+  width: 100%;
+  margin-left: 0.438rem;
+  margin-right: 0.438rem
+}
+.colSpells{
+  // max-width: 11.063rem;
+  max-width: 17rem;
+  width: 100%;
+  margin-left: 0.438rem;
+  margin-right: 0.438rem
+}
+.colWizardJournal{
+  // max-width: 59.813rem;
+  max-width: 61.813rem;
+  width: 100%;
+  margin-left: 0.438rem;
+  margin-right: 0.438rem;
+}
+.noFlexBox .cardTitle{
+  text-align: center;
+}
+.colwizard nb-card{
+  border: none !important;
+  border-radius: 0.938rem;
+}
+.colWizard nb-card{
+  border: none !important;
+  border-radius: 0.938rem;
+}
+.colSpells nb-card{
+  border: none !important;
+  border-radius: 0.938rem;
+}
+.colWizardJournal nb-card{
+  border: none !important;
+  border-radius: 0.938rem;
+}
+.colWizardType nb-card{
+  border: none !important;
+  border-radius: 0.938rem;
+}
+.cardList nb-list-item:not(:last-child){
+  border-bottom: 1px solid #fff !important;
+}
+.cardList nb-list-item {
+  padding: 1.25rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border: none;
+}
+.typeIcon{
+  margin-left: 2rem;
+}
+.msgBlock {
+  min-height: 11.5rem;
+  padding: 1.25rem;
+  font-size: 1.5rem;
+}
+.attribute_block {
+  padding: 1.25rem;
+}
+.subTitle {
+  text-align: left;
+}
+.subTitle .name{
+  min-width: 6.875rem;
+  width: 100%;
+  margin-right: 1rem;
+}
+// .dashBoard.ng-star-inserted {
+//   margin-left: 2rem;
+// }
+.progressRow .progressRight {
+  max-width: 18rem;
+  width: 100%;
+}
+.progressRow .progressLeft {
+  max-width: 25rem;
+  width: 100%;
+}
+.progressRow {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  column-gap: 1rem;    
+  align-items: center;
+  text-align: left;
+}
+.innerRow {
+  display: flex;
+  align-items: center;
+}
+.col--65 {
+  max-width: 65%;
+  width: 100%;
+}
+.col--35 {
+  max-width: 35%;
+  width: 100%;
+}
+.font-22{
+  font-size: 1.375rem;
+  font-weight: 500;
+}
+.font-18{
+  font-size: 1.125rem;
+}
+.primaryBtn{
+  background: #33C877;
+  color: #fff;
+  min-width: 7rem;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+  border: 1px solid #33C877;
+  border-radius: 0.313rem;
+  line-height: 1;
+}
+.progressLeft .font-22 {
+  margin-bottom: 0;
+}
+.progress {
+  height: 1.625rem;
+  border-radius: 0;
+}
+.progress-bar {
+  background: #33C877;
+  width: 3%;
+}
+.name .nameType{
+  font-weight: 400;
+}
+.progress{
+  height: 1rem;
+  border-radius: 0;
+  background: transparent;
+  border: 1px solid #fff;
+}
+.progressRow:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+.calcProgress{
+  margin-top: 0.75rem;
+}
+.upgradeBtn {
+  margin-right: 1rem;
+}
+.progressRight .innerRow {
+  text-align: right;
+}
+.typeIcon svg {
+  height: 1.5rem;
+  width: 2rem;
+}
+select.selectionImg {
+  min-height: 1.75rem;
+}
+.row.rowWrapper {
+  justify-content: center;
+}
+@media screen and (max-width: 740px){
+  .progressRow{
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 1rem;
+  }
+  .progressRow .progressRight {
+    max-width: 100%;
+    width: 100%;
+  }               
+  .progressRow .progressLeft{
+    max-width: 100%;
+    width: 100%;
+  }
+  .progressRight .innerRow {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 520px){
+  .dashBoard.ng-star-inserted {
+    margin-top: 2rem;
+    margin-left: 0;
+    padding: 2.5rem;
+  }
+  .msgBlock {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .colSpells{
+	  max-width: 100%;
+  }
+  .colwizard{
+    max-width: 100%;
+  }
+  .colWizardType{
+    max-width: 100%;
+  }
+  .colWizardJournal{
+    max-width: 100%;
+  }
+}
+.innerTitle {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #fff;
+}

@@ -2,7 +2,9 @@
   <nb-layout-header fixed>
     <app-header></app-header>
   </nb-layout-header>
-  <nb-sidebar state="compacted"></nb-sidebar>
+  <nb-sidebar class="menu-sidebar" responsive start expanded="false">
+    <nb-menu [items]="items" ></nb-menu>
+  </nb-sidebar>
   <nb-layout-column style="background-image: url('assets/images/wizardsLowMap.png'); background-size: cover;
               background-repeat: no-repeat;">
     <router-outlet></router-outlet>

@@ -1,127 +1,412 @@
-<div *ngIf="this.hasWizard">
-  <div class="row" style="padding-left: 50px; padding-top: 50px">
-    <div class="col-lg-4">
+<div *ngIf="this.hasWizard" class="dashBoard">
+  <div class="row rowWrapper">
+    <div class="colwizard">
       <nb-card class="">
-        <div style="padding-top: 5px; padding-left: 20px;">
-          <label for="wizards" style="padding-right: 5px; font-family: Georgia; font-size: 12pt;">Wizard:</label>
-          <select name="wizards" id="wizards" (change)="loadSelectedWizard($any($event.target).value)">
-            <option *ngFor="let wizard of wizards$, let i = index"
-                    value="{{wizard.token_id}},{{i}}">{{wizard.token_id}}</option>
-          </select>
+        <div class="cardBlock">
+          <div class="cardHeader headerBgWHite flexBox">
+            <div class="flexColLeft">
+              <!-- <label for="wizards">Wizard</label> -->
+              <h4 class="cardTitle">wizards</h4>
+            </div>
+            <div class="flexColRight">
+              <!-- <select name="wizards" id="wizards" (change)="loadSelectedWizard($any($event.target).value)">
+                <option *ngFor="let wizard of wizards$; let i = index" value="{{ wizard.token_id }},{{ i }}">
+                  {{ wizard.token_id }}
+                </option>
+              </select> -->
+              <select class="selectionImg">
+                <option>Nero</option>
+                <option>Nero 2</option>
+                <option>Nero 3</option>
+              </select>
+            </div>
+          </div>
         </div>
-        <img style="background-color: #151a30; margin-left: 8px; margin-right: 8px; margin-bottom: 8px"
-             src="{{this.imgUrl.image}}">
+        <!-- <img style="" src="{{ this.imgUrl.image }}" /> -->
+        <div class="flexColRight">
+          <div class="cardImg">
+            <img src="../../assets/images/wizard-gif.svg" alt="Wizard" />
+          </div>
+        </div>
       </nb-card>
     </div>
 
-    <div class="col-lg-6">
+    <div class="colWizardType">
       <nb-card class="">
-
-        <div style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 20px">
-          <div style="align-items: center">
-            <label style="font-size: 24pt; font-family: Georgia; padding-left: 30px;">Wizard Type: </label>
-            <img src='assets/images/{{this.wizard.type}}.png' style="width: 55px; position: relative; padding-bottom: 10px">
+        <div class="cardBlock">
+          <div class="cardHeader headerBgWHite flexBox">
+            <div class="flexColLeft">
+              <h4 class="cardTitle">
+                Wizard Type
+                <span class="typeIcon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="111.097"
+                    height="140.723"
+                    viewBox="0 0 111.097 140.723"
+                  >
+                    <g id="icons8_fire" transform="translate(-9 -5)">
+                      <path
+                        id="Path_319890"
+                        data-name="Path 319890"
+                        d="M120.1,90.174a55.035,55.035,0,0,1-55.552,55.548A55.029,55.029,0,0,1,9,90.174C9,59.086,58.916,33.144,53.287,5,64.548,5,120.1,45.147,120.1,90.174Z"
+                        transform="translate(0)"
+                        fill="#dd2c00"
+                      />
+                      <path
+                        id="Path_319891"
+                        data-name="Path 319891"
+                        d="M81.658,72.548C81.658,44.408,48.329,17,48.329,17,48.329,39.516,15,50.036,15,72.548a33.021,33.021,0,0,0,33.329,33.329A33.021,33.021,0,0,0,81.658,72.548Z"
+                        transform="translate(16.219 32.439)"
+                        fill="#ff5722"
+                      />
+                      <path
+                        id="Path_319892"
+                        data-name="Path 319892"
+                        d="M19,58.129C19,45.516,37.519,38.3,37.519,27c0,0,18.512,14.191,18.512,31.129,0,9.351-8.284,16.939-18.516,16.939S19,67.484,19,58.129Z"
+                        transform="translate(27.03 59.471)"
+                        fill="#ffc107"
+                      />
+                    </g>
+                  </svg>
+                </span>
+              </h4>
+            </div>
+            <!-- <img src="assets/images/{{ this.wizard.type }}.png"
+              style="width: 55px; position: relative; padding-bottom: 10px" /> -->
+            <div class="flexColRight">
+              <h4 class="cardTitle">Level {{ this.wizard.level }}</h4>
+            </div>
           </div>
-          <span id="level" style="display: flex; justify-content: flex-end; text-align: end; padding-top: 25px; padding-right: 30px; font-size: 32px; font-family: Georgia">Level {{this.wizard.level}}</span>
+          <!-- <span id="level">Level {{ this.wizard.level }}</span> -->
         </div>
 
         <div class="attribute_block">
-          <div>
-            <label id="name" style="font-family: Georgia">Name: </label>
-            <span> {{this.wizard.name}}</span>
+          <div class="innerTitle">
+            <div class="subTitle">
+              <div class="name">
+                <h4 class="font-22">
+                  Name:
+                  <span class="nameType">{{ this.wizard.name }} Nero</span>
+                </h4>
+              </div>
+            </div>
+            <div class="subTitle">
+              <div class="name">
+                <h4 class="font-22">
+                  Region:
+                  <span class="nameType">{{ this.wizard.region }} Wizard</span>
+                </h4>
+              </div>
+            </div>
+            <div class="subTitle">
+              <div class="name">
+                <h4 class="font-22">
+                  Strength:
+                  <span class="nameType">Myriadees</span>
+                </h4>
+              </div>
+            </div>
           </div>
-          <div>
-            <label id="profession" style="font-family: Georgia">Profession: </label>
-            <span> {{this.wizard.profession}}</span>
+          <!-- <div>
+            <label id="profession">Profession:
+            </label>
+            <span> {{ this.wizard.profession }}</span>
+          </div> -->
+          <!-- <div>
+            <label id="region">Region: </label>
+            <span> {{ this.wizard.region }}</span>
+          </div> -->
+          <div class="calcProgress">
+            <div class="progressRow">
+              <div class="progressLeft">
+                <div class="innerRow">
+                  <div class="col--35">
+                    <h4 class="font-22">Strength</h4>
+                  </div>
+                  <div class="col--65">
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        aria-valuenow="70"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="width: 70%"
+                      >
+                        <span class="sr-only">70% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="progressRight">
+                <div class="innerRow">
+                  <div class="col--35">
+                    <h4 class="font-18">LEVEL: {{ this.wizard.str }}</h4>
+                  </div>
+                  <div class="col--65">
+                    <div class="upgradeBtn">
+                      <button type="button" class="btn primaryBtn">
+                        UPGRADE
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="progressRow">
+              <div class="progressLeft">
+                <div class="innerRow">
+                  <div class="col--35">
+                    <h4 class="font-22">Speed</h4>
+                  </div>
+                  <div class="col--65">
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        aria-valuenow="10"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <span class="sr-only">10% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="progressRight">
+                <div class="innerRow">
+                  <div class="col--35">
+                    <h4 class="font-18">LEVEL: {{ this.wizard.speed }}</h4>
+                  </div>
+                  <div class="col--65">
+                    <div class="upgradeBtn">
+                      <button type="button" class="btn primaryBtn">
+                        UPGRADE
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="progressRow">
+              <div class="progressLeft">
+                <div class="innerRow">
+                  <div class="col--35">
+                    <h4 class="font-22">Stamina</h4>
+                  </div>
+                  <div class="col--65">
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        aria-valuenow="10"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <span class="sr-only">10% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="progressRight">
+                <div class="innerRow">
+                  <div class="col--35">
+                    <h4 class="font-18">LEVEL: {{ this.wizard.stamina }}</h4>
+                  </div>
+                  <div class="col--65">
+                    <div class="upgradeBtn">
+                      <button type="button" class="btn primaryBtn">
+                        UPGRADE
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="progressRow">
+              <div class="progressLeft">
+                <div class="innerRow">
+                  <div class="col--35">
+                    <h4 class="font-22">Intelligence</h4>
+                  </div>
+                  <div class="col--65">
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        aria-valuenow="10"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <span class="sr-only">10% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="progressRight">
+                <div class="innerRow">
+                  <div class="col--35">
+                    <h4 class="font-18">LEVEL: {{ this.wizard.intel }}</h4>
+                  </div>
+                  <div class="col--65">
+                    <div class="upgradeBtn">
+                      <button type="button" class="btn primaryBtn">
+                        UPGRADE
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="progressRow">
+              <div class="progressLeft">
+                <div class="innerRow">
+                  <div class="col--35">
+                    <h4 class="font-22">Spells</h4>
+                  </div>
+                  <div class="col--65">
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        aria-valuenow="10"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <span class="sr-only">10% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="progressRight">
+                <div class="innerRow">
+                  <div class="col--35">
+                    <h4 class="font-18">LEVEL: {{ this.wizard.spells }}</h4>
+                  </div>
+                  <div class="col--65">
+                    <div class="upgradeBtn">
+                      <button type="button" class="btn primaryBtn">
+                        UPGRADE
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <label id="region" style="font-family: Georgia">Region: </label>
-            <span> {{this.wizard.region}}</span>
-          </div>
-          <div>
-            <label id="wiz_attribute" style="font-family: Georgia">Strength</label>
-            <progress id="strength" value="{{this.wizard.str}}" max="100">{{this.wizard.str}}%</progress>
-            <span id="level_rank">LEVEL: {{this.wizard.str}}</span>
-            <button nbButton hero outline status="success" size="tiny">
-              UPGRADE
-            </button>
-          </div>
-          <div>
-            <label id="wiz_attribute" style="font-family: Georgia">Speed</label>
-            <progress id="speed" value="{{this.wizard.speed}}" max="100">{{this.wizard.speed}}%</progress>
-            <span id="level_rank">LEVEL: {{this.wizard.speed}}</span>
-            <button nbButton hero outline status="success" size="tiny">
-              UPGRADE
-            </button>
-          </div>
-          <div>
-            <label id="wiz_attribute" style="font-family: Georgia">Stamina</label>
-            <progress id="stamina" value="{{this.wizard.stamina}}" max="100">{{this.wizard.stamina}}%</progress>
-            <span id="level_rank">LEVEL: {{this.wizard.stamina}}</span>
-            <button nbButton hero outline status="success" size="tiny">
-              UPGRADE
-            </button>
-          </div>
-          <div>
-            <label id="wiz_attribute" style="font-family: Georgia">Intelligence</label>
-            <progress id="intelligence" value="{{this.wizard.intel}}" max="100">{{this.wizard.intel}}%
+          <!-- <div class="countLevel">
+            <label id="wiz_attribute">Strength</label>
+            <progress id="strength" value="{{ this.wizard.str }}" max="100">
+              {{ this.wizard.str }}%
             </progress>
-            <span id="level_rank">LEVEL: {{this.wizard.intel}}</span>
+            <span id="level_rank">LEVEL: {{ this.wizard.str }}</span>
             <button nbButton hero outline status="success" size="tiny">
               UPGRADE
             </button>
           </div>
-          <div>
-            <label id="wiz_attribute" style="font-family: Georgia">Spells</label>
-            <progress id="spells" value="{{this.wizard.spells}}" max="100">{{this.wizard.spells}}%</progress>
-            <span id="level_rank">LEVEL: {{this.wizard.spells}}</span>
+          <div class="countLevel">
+            <label id="wiz_attribute">Speed</label>
+            <progress id="speed" value="{{ this.wizard.speed }}" max="100">
+              {{ this.wizard.speed }}%
+            </progress>
+            <span id="level_rank">LEVEL: {{ this.wizard.speed }}</span>
             <button nbButton hero outline status="success" size="tiny">
               UPGRADE
             </button>
           </div>
+          <div class="countLevel">
+            <label id="wiz_attribute">Stamina</label>
+            <progress id="stamina" value="{{ this.wizard.stamina }}" max="100">
+              {{ this.wizard.stamina }}%
+            </progress>
+            <span id="level_rank">LEVEL: {{ this.wizard.stamina }}</span>
+            <button nbButton hero outline status="success" size="tiny">
+              UPGRADE
+            </button>
+          </div>
+          <div class="countLevel">
+            <label id="wiz_attribute">Intelligence</label>
+            <progress id="intelligence" value="{{ this.wizard.intel }}" max="100">
+              {{ this.wizard.intel }}%
+            </progress>
+            <span id="level_rank">LEVEL: {{ this.wizard.intel }}</span>
+            <button nbButton hero outline status="success" size="tiny">
+              UPGRADE
+            </button>
+          </div>
+          <div class="countLevel">
+            <label id="wiz_attribute">Spells</label>
+            <progress id="spells" value="{{ this.wizard.spells }}" max="100">
+              {{ this.wizard.spells }}%
+            </progress>
+            <span id="level_rank">LEVEL: {{ this.wizard.spells }}</span>
+            <button nbButton hero outline status="success" size="tiny">
+              UPGRADE
+            </button>
+          </div> -->
         </div>
-
       </nb-card>
     </div>
 
-    <div class="col-lg-2">
-      <div class="col">
-        <nb-card class="">
-          <nb-card-header style="font-family: Georgia; text-align: center; background-color: darkred;">SPELLS</nb-card-header>
-          <nb-list>
-            <nb-list-item style="font-family: Georgia">LUCIS</nb-list-item>
-            <nb-list-item style="font-family: Georgia">ETHENOS</nb-list-item>
-            <nb-list-item style="font-family: Georgia">CRUXIX</nb-list-item>
-            <nb-list-item style="font-family: Georgia">APEREOS</nb-list-item>
-          </nb-list>
-        </nb-card>
-      </div>
-    </div>
-  </div>
-
-  <div class="row" style="padding-left: 50px">
-    <div class="col-md-4">
+    <div class="colSpells">
       <nb-card class="">
-        <nb-card-header style="font-family: Georgia; text-align: center; background-color: darkred;">Token and XP</nb-card-header>
-        <nb-list>
-          <nb-list-item style="font-family: Georgia">XP Available</nb-list-item>
-          <nb-list-item style="font-family: Georgia">Tokens Available</nb-list-item>
-          <nb-list-item style="font-family: Georgia">Stats Boosted</nb-list-item>
+        <div class="cardBlock">
+          <div class="cardHeader headerBgWHite noFlexBox">
+            <h4 class="cardTitle">SPELLS</h4>
+          </div>
+        </div>
+        <nb-list class="cardList">
+          <nb-list-item>LUCIS</nb-list-item>
+          <nb-list-item>ETHENOS</nb-list-item>
+          <nb-list-item>CRUXIX</nb-list-item>
+          <nb-list-item>APEREOS</nb-list-item>
         </nb-list>
       </nb-card>
     </div>
-    <div class="col-md-8">
-      <nb-card>
-        <label for="journal" style="font-family: Georgia; margin-left: 15px; margin-top: 10px;">Wizard Journal</label>
-        <div id="journal" name="journal" rows="8" cols="60" style="background-color: #ece3ff; font-family: Georgia; color: black">
-          Be careful wizard, your choices matter. They will appear here.
-          <br>.
-          <br>.
-          <br>.
-          <br>.
-          <br>.
+  </div>
+
+  <div class="row rowWrapper">
+    <div class="colwizard">
+      <nb-card class="">
+        <div class="cardBlock">
+          <div class="cardHeader headerBgWHite noFlexBox">
+            <h4 class="cardTitle">Token and XP</h4>
+          </div>
         </div>
-        <br><br>
+        <nb-list class="cardList">
+          <nb-list-item>
+            <span class="titleWidth"> XP Available - </span>
+            <span class="countWidth"> &nbsp;5</span>
+          </nb-list-item>
+          <nb-list-item>
+            <span class="titleWidth"> Tokens Available - </span>
+            <span class="countWidth"> &nbsp;15</span>
+          </nb-list-item>
+          <nb-list-item>
+            <span class="titleWidth"> Stats Boosted - </span>
+            <span class="countWidth"> &nbsp;15</span>
+          </nb-list-item>
+        </nb-list>
+      </nb-card>
+    </div>
+    <div class="colWizardJournal">
+      <nb-card>
+        <div class="cardBlock">
+          <div class="cardHeader headerBgWHite flexBox">
+            <h4 class="cardTitle">Wizard Journal</h4>
+          </div>
+        </div>
+        <div class="wizardJournalMsg" id="journal" name="journal">
+          <div class="msgBlock">
+            Be careful, wizard. Your choices matter. They will appear here.
+          </div>
+        </div>
       </nb-card>
     </div>
   </div>

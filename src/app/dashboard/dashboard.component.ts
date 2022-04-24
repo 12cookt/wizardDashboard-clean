@@ -3,7 +3,6 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { ApiWizard } from "../models/apiWizard";
 import { Observable } from "rxjs";
 import {LoginService} from "../services/login.service";
-import {Exception} from "node-sass";
 
 
 interface Metadata {
@@ -23,7 +22,7 @@ export class DashboardComponent implements OnInit {
   })
 };
 
-  hasWizard: boolean = false;
+  hasWizard: boolean = true; //hardcoded to true to bypass redirect for dev purposes
 
   wizards$: Array<any> = [];
 
@@ -51,10 +50,11 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
 
+    //if else block in below code is commented to bypass redirect for dev purposes.
       this.getUsersNFTs().subscribe(data => {
-        if (data.result.length == 0)
-          window.location.href = 'https://mint.wizardsofetheen.com/';
-        else
+        //if (data.result.length == 0)
+          //window.location.href = 'https://mint.wizardsofetheen.com/';
+        //else
           this.hasWizard = true;
         this.wizards$ = data.result;
         this.imgUrl = JSON.parse(this.wizards$[0].metadata);

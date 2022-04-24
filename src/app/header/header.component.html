@@ -1,19 +1,33 @@
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+  rel="stylesheet"
+/>
 
 <div class="header-container">
-    <div class="logo-container">
-      <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
-        <nb-icon icon="menu-2-outline"></nb-icon>
-      </a>
-      <a href="#" src="assets/images/woe.png" (click)="navigateHome()">
-        <img class="logo" src="assets/images/dashboard_logo.png">
-      </a>
-    </div>
+  <div class="logo-container">
+    <a (click)="toggleSidebar()" routerLink="/side" class="sidebar-toggle">
+      <nb-icon icon="menu-2-outline"></nb-icon>
+    </a>
+    <a href="#" src="assets/images/woe.png" (click)="navigateHome()" class="headLogo">
+      <img class="logo" src="assets/images/header-logo.svg" alt="Logo" />
+    </a>
   </div>
 
-  <div class="header-container">
-    <div>
-      <button *ngIf="!this.loginService.isLoggedIn" class="enableEthereumButton walletbutton" (click)="getAccount()" routerLink="/home" style="background-color: black">CONNECT WALLET</button>
-        <span class="showAccount" *ngIf="this.loginService.isLoggedIn">Account: {{this.loginService.showAccount}}</span>
-    </div>
+</div>
+
+<div class="header-container connectBtn">
+  <div class="actionBtn white">
+    <button
+      *ngIf="!this.loginService.isLoggedIn"
+      class="enableEthereumButton walletbutton"
+      (click)="getAccount()"
+      routerLink="/home"
+    >
+    Connect Wallet
+    </button>
+    <span class="disabledWall" *ngIf="this.loginService.isLoggedIn">
+    {{ this.loginService.showAccount }}
+    </span
+    >
+  </div>
 </div>

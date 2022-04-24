@@ -7,3 +7,134 @@
 };
 
 @import '~bootstrap';
+
+
+
+// .menu-sidebar.start.expanded .scrollable {
+//   -webkit-transition: all 0.5s ease-in-out;
+//   -moz-transition: all 0.5s ease-in-out;
+//   -ms-transition: all 0.5s ease-in-out;
+//   -o-transition: all 0.5s ease-in-out;
+//   transition: all 0.5s ease-in-out;
+// }
+.login-message{
+  line-height: 40px;
+}
+nb-icon.menu-icon {
+  width: auto !important;
+  height: auto;
+}
+nb-icon.menu-icon svg {
+  width: 2rem;
+  height: 2rem;
+}
+span.menu-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-left: 1rem;
+}
+nb-sidebar.menu-sidebar.start.expanded {
+  max-width: 23rem !important;
+  width: 100% !important;
+}
+
+nb-sidebar .menu-item {
+  border-bottom: none !important;
+}
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&family=Comfortaa:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@200;300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+html body{
+  font-family: 'Archivo', sans-serif;
+  font-family: 'Comfortaa', cursive;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+@media screen and (max-width: 1920) and (min-width: 1500px){
+  
+}
+nb-sidebar .menu-item {
+  border-bottom: none !important;
+}
+.main-container.main-container-fixed {
+  background: transparent;
+  border: none;
+  position: inherit !important;
+  width: 100% !important;
+}
+nb-sidebar .main-container.main-container-fixed {
+  max-width: 23rem;
+  width: 100% !important;
+  position: inherit !important;
+}
+a.headLogo {
+  max-width: 22rem;
+  width: 100%;
+}
+@media screen and (max-width: 500px){
+  app-header {
+    flex-wrap: wrap;
+  }
+  .header-container {
+    width: 100% !important;
+  }
+  nav.fixed{
+    height: auto;
+    padding: 10px 5px 5px 5px;
+  }
+  .header-container.connectBtn {
+    justify-content: flex-end;
+  }
+  .logo-container{
+    width: 100% !important;
+  }
+  a.headLogo {
+    width: 20rem;
+  }
+  .headLogo img{
+    width: 30rem;
+  }
+  nb-sidebar nb-menu {
+    margin-top: 3rem !important;
+  }
+  nb-layout-column {
+    margin-top: 2rem;
+  }
+}
+@media screen and (max-width: 970px){
+  .col-lg-2 .col {
+    padding: 0;
+  }
+  label#wiz_attribute {
+    text-align: left !important;
+  }
+  span#level_rank {
+    float: left !important;
+    padding-left: 4% !important;
+  }
+  .countLevel {
+    margin: 10px 0;
+  }
+}
+@media screen and (max-width: 800px){
+  .content label {
+    font-size: 15px !important;
+  }
+  .wizardJournal{
+    padding: 10px;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1800px){
+  html{
+    font-size: 0.833vw !important;
+  }
+}
+@media screen and (max-width: 767px){
+  html{
+    font-size: 2vw !important;
+  }
+}
+@media screen and (max-width: 400px){
+  html{
+    font-size: 3vw !important;
+  }
+}
