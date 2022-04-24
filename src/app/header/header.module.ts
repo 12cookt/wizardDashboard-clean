@@ -21,6 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     HeaderComponent
   ],
+  exports: [
+    HeaderComponent
+  ],
   imports: [
     CommonModule,
     NbCardModule,

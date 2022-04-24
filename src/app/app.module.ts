@@ -9,6 +9,7 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { WelcomeComponent } from './welcome/welcome.component';
 import Moralis from "moralis";
+import {HeaderModule} from "./header/header.module";
 
 
 
@@ -22,7 +23,7 @@ import Moralis from "moralis";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NbThemeModule.forRoot({ name: 'cosmic' }),
+    NbThemeModule.forRoot({name: 'cosmic'}),
     NbLayoutModule,
     NbEvaIconsModule,
     NbCardModule,
@@ -30,6 +31,7 @@ import Moralis from "moralis";
     NbIconModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
+    HeaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
