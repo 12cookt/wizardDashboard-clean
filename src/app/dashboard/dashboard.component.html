@@ -9,15 +9,10 @@
               <h4 class="cardTitle">wizards</h4>
             </div>
             <div class="flexColRight">
-              <!-- <select name="wizards" id="wizards" (change)="loadSelectedWizard($any($event.target).value)">
+              <select name="wizards" id="wizards" (change)="loadSelectedWizard($any($event.target).value)">
                 <option *ngFor="let wizard of wizards$; let i = index" value="{{ wizard.token_id }},{{ i }}">
                   {{ wizard.token_id }}
                 </option>
-              </select> -->
-              <select class="selectionImg">
-                <option>Nero</option>
-                <option>Nero 2</option>
-                <option>Nero 3</option>
               </select>
             </div>
           </div>
@@ -25,7 +20,7 @@
         <!-- <img style="" src="{{ this.imgUrl.image }}" /> -->
         <div class="flexColRight">
           <div class="cardImg">
-            <img src="../../assets/images/wizard-gif.svg" alt="Wizard" />
+            <img style="" src="{{ this.imgUrl.image }}" alt="Wizard" />
           </div>
         </div>
       </nb-card>

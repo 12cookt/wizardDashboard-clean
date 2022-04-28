@@ -52,9 +52,9 @@ export class DashboardComponent implements OnInit {
 
     //if else block in below code is commented to bypass redirect for dev purposes.
       this.getUsersNFTs().subscribe(data => {
-        //if (data.result.length == 0)
-          //window.location.href = 'https://mint.wizardsofetheen.com/';
-        //else
+        if (data.result.length == 0)
+          window.location.href = 'https://mint.wizardsofetheen.com/';
+        else
           this.hasWizard = true;
         this.wizards$ = data.result;
         this.imgUrl = JSON.parse(this.wizards$[0].metadata);
