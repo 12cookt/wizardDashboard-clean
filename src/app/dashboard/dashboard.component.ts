@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
   })
 };
 
-  hasWizard: boolean = true; //hardcoded to true to bypass redirect for dev purposes
+  hasWizard: boolean = false; //hardcoded to true to bypass redirect for dev purposes
 
   wizards$: Array<any> = [];
 
@@ -50,7 +50,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
 
-    //if else block in below code is commented to bypass redirect for dev purposes.
       this.getUsersNFTs().subscribe(data => {
         if (data.result.length == 0)
           window.location.href = 'https://mint.wizardsofetheen.com/';
