@@ -10,10 +10,12 @@ export class  LoginService {
 
   public isLoggedIn: boolean;
   public showAccount: string;
+  public userAccount: string;
 
   constructor(private router: Router, private route: ActivatedRoute) {
     this.isLoggedIn = false;
     this.showAccount = '';
+    this.userAccount = '';
   }
 
 
@@ -21,6 +23,7 @@ export class  LoginService {
     const accounts: any = await window.ethereum.request({ method: 'eth_requestAccounts' });
     if (accounts) {
       const account = accounts[0];
+      this.userAccount = account
       this.showAccount = truncateEthAddress(account);
       this.isLoggedIn = true;
     }
