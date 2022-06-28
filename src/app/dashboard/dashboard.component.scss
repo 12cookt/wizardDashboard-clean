@@ -183,7 +183,7 @@ progress::-webkit-progress-value {
 .progressRow {
   display: grid;
   grid-template-columns: 60% 40%;
-  column-gap: 1rem;    
+  column-gap: 1rem;
   align-items: center;
   text-align: left;
 }
@@ -226,7 +226,7 @@ progress::-webkit-progress-value {
 }
 .progress-bar {
   background: #33C877;
-  width: 3%;
+  width: 100%;
 }
 .name .nameType{
   font-weight: 400;
@@ -267,7 +267,7 @@ select.selectionImg {
   .progressRow .progressRight {
     max-width: 100%;
     width: 100%;
-  }               
+  }
   .progressRow .progressLeft{
     max-width: 100%;
     width: 100%;

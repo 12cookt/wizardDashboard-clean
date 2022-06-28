@@ -6,7 +6,7 @@
           <div class="cardHeader headerBgWHite flexBox">
             <div class="flexColLeft">
               <!-- <label for="wizards">Wizard</label> -->
-              <h4 class="cardTitle">wizards</h4>
+              <h4 class="cardTitle">Wizards</h4>
             </div>
             <div class="flexColRight">
               <select name="wizards" id="wizards" (change)="loadSelectedWizard($any($event.target).value)">
@@ -40,40 +40,40 @@
                     height="140.723"
                     viewBox="0 0 111.097 140.723"
                   >
-                    <g id="icons8_fire" transform="translate(-9 -5)">
-                      <path
-                        id="Path_319890"
-                        data-name="Path 319890"
-                        d="M120.1,90.174a55.035,55.035,0,0,1-55.552,55.548A55.029,55.029,0,0,1,9,90.174C9,59.086,58.916,33.144,53.287,5,64.548,5,120.1,45.147,120.1,90.174Z"
-                        transform="translate(0)"
-                        fill="#dd2c00"
-                      />
-                      <path
-                        id="Path_319891"
-                        data-name="Path 319891"
-                        d="M81.658,72.548C81.658,44.408,48.329,17,48.329,17,48.329,39.516,15,50.036,15,72.548a33.021,33.021,0,0,0,33.329,33.329A33.021,33.021,0,0,0,81.658,72.548Z"
-                        transform="translate(16.219 32.439)"
-                        fill="#ff5722"
-                      />
-                      <path
-                        id="Path_319892"
-                        data-name="Path 319892"
-                        d="M19,58.129C19,45.516,37.519,38.3,37.519,27c0,0,18.512,14.191,18.512,31.129,0,9.351-8.284,16.939-18.516,16.939S19,67.484,19,58.129Z"
-                        transform="translate(27.03 59.471)"
-                        fill="#ffc107"
-                      />
-                    </g>
+<!--                    <g id="icons8_fire" transform="translate(-9 -5)">-->
+<!--                      <path-->
+<!--                        id="Path_319890"-->
+<!--                        data-name="Path 319890"-->
+<!--                        d="M120.1,90.174a55.035,55.035,0,0,1-55.552,55.548A55.029,55.029,0,0,1,9,90.174C9,59.086,58.916,33.144,53.287,5,64.548,5,120.1,45.147,120.1,90.174Z"-->
+<!--                        transform="translate(0)"-->
+<!--                        fill="#dd2c00"-->
+<!--                      />-->
+<!--                      <path-->
+<!--                        id="Path_319891"-->
+<!--                        data-name="Path 319891"-->
+<!--                        d="M81.658,72.548C81.658,44.408,48.329,17,48.329,17,48.329,39.516,15,50.036,15,72.548a33.021,33.021,0,0,0,33.329,33.329A33.021,33.021,0,0,0,81.658,72.548Z"-->
+<!--                        transform="translate(16.219 32.439)"-->
+<!--                        fill="#ff5722"-->
+<!--                      />-->
+<!--                      <path-->
+<!--                        id="Path_319892"-->
+<!--                        data-name="Path 319892"-->
+<!--                        d="M19,58.129C19,45.516,37.519,38.3,37.519,27c0,0,18.512,14.191,18.512,31.129,0,9.351-8.284,16.939-18.516,16.939S19,67.484,19,58.129Z"-->
+<!--                        transform="translate(27.03 59.471)"-->
+<!--                        fill="#ffc107"-->
+<!--                      />-->
+<!--                    </g>-->
                   </svg>
+                  <img src="assets/images/{{ this.wizard.type }}.png"
+                    style="width: 55px; position: sticky; padding-bottom: 10px;" />
                 </span>
               </h4>
             </div>
-            <!-- <img src="assets/images/{{ this.wizard.type }}.png"
-              style="width: 55px; position: relative; padding-bottom: 10px" /> -->
+
             <div class="flexColRight">
               <h4 class="cardTitle">Level {{ this.wizard.level }}</h4>
             </div>
           </div>
-          <!-- <span id="level">Level {{ this.wizard.level }}</span> -->
         </div>
 
         <div class="attribute_block">
@@ -103,15 +103,6 @@
               </div>
             </div>
           </div>
-          <!-- <div>
-            <label id="profession">Profession:
-            </label>
-            <span> {{ this.wizard.profession }}</span>
-          </div> -->
-          <!-- <div>
-            <label id="region">Region: </label>
-            <span> {{ this.wizard.region }}</span>
-          </div> -->
           <div class="calcProgress">
             <div class="progressRow">
               <div class="progressLeft">
@@ -121,16 +112,13 @@
                   </div>
                   <div class="col--65">
                     <div class="progress">
-                      <div
+                      <progress
                         class="progress-bar"
                         role="progressbar"
-                        aria-valuenow="70"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                        style="width: 70%"
+                        value="{{this.wizard.str}}"
+                        max="100"
                       >
-                        <span class="sr-only">70% Complete</span>
-                      </div>
+                      </progress>
                     </div>
                   </div>
                 </div>
@@ -158,15 +146,13 @@
                   </div>
                   <div class="col--65">
                     <div class="progress">
-                      <div
+                      <progress
                         class="progress-bar"
                         role="progressbar"
-                        aria-valuenow="10"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
+                        value="{{this.wizard.speed}}"
+                        max="100"
                       >
-                        <span class="sr-only">10% Complete</span>
-                      </div>
+                      </progress>
                     </div>
                   </div>
                 </div>
@@ -194,15 +180,13 @@
                   </div>
                   <div class="col--65">
                     <div class="progress">
-                      <div
+                      <progress
                         class="progress-bar"
                         role="progressbar"
-                        aria-valuenow="10"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
+                        value="{{this.wizard.stamina}}"
+                        max="100"
                       >
-                        <span class="sr-only">10% Complete</span>
-                      </div>
+                      </progress>
                     </div>
                   </div>
                 </div>
@@ -230,15 +214,13 @@
                   </div>
                   <div class="col--65">
                     <div class="progress">
-                      <div
+                      <progress
                         class="progress-bar"
                         role="progressbar"
-                        aria-valuenow="10"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
+                        value="{{this.wizard.intel}}"
+                        max="100"
                       >
-                        <span class="sr-only">10% Complete</span>
-                      </div>
+                      </progress>
                     </div>
                   </div>
                 </div>
@@ -266,15 +248,13 @@
                   </div>
                   <div class="col--65">
                     <div class="progress">
-                      <div
+                      <progress
                         class="progress-bar"
                         role="progressbar"
-                        aria-valuenow="10"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
+                        value="{{this.wizard.spells}}"
+                        max="100"
                       >
-                        <span class="sr-only">10% Complete</span>
-                      </div>
+                      </progress>
                     </div>
                   </div>
                 </div>
