@@ -25,7 +25,7 @@ export class AppComponent {
       home: true
     },
     {
-      title: 'City of Ether',
+      title: 'City of Ether (Coming Soon)',
       link: '/users',
       icon:"pin-outline",
     },
@@ -34,57 +34,57 @@ export class AppComponent {
       icon:"clock-outline",
     },
     {
-      title: 'Quest Board',
+      title: 'Quest Board (Coming Soon)',
       icon:"map-outline",
       expanded: false,
-      children: [
-        {
-          title: 'Change Password',
-        },
-        {
-          title: 'Privacy Policy',
-        },
-        {
-          title: 'Logout',
-        },
-      ],
+      // children: [
+      //   {
+      //     title: 'Change Password',
+      //   },
+      //   {
+      //     title: 'Privacy Policy',
+      //   },
+      //   {
+      //     title: 'Logout',
+      //   },
+      // ],
     },
     {
-      title: 'Battle of etheen (Coming Soon)',
+      title: 'Battle for Etheen (Coming Soon)',
       icon: 'shield-outline',
       expanded: false,
-      children: [
-        {
-          title: 'Change Password',
-        },
-        {
-          title: 'Privacy Policy',
-        },
-        {
-          title: 'Logout',
-        },
-      ],
+      // children: [
+      //   {
+      //     title: 'Change Password',
+      //   },
+      //   {
+      //     title: 'Privacy Policy',
+      //   },
+      //   {
+      //     title: 'Logout',
+      //   },
+      // ],
     },
     {
-      title: 'Region Rankings',
+      title: 'Region Rankings (Coming Soon)',
       icon:"globe-outline",
       expanded: false,
-      children: [
-        {
-          title: 'Change Password',
-        },
-        {
-          title: 'Privacy Policy',
-        },
-        {
-          title: 'Logout',
-        },
-      ],
+      // children: [
+      //   {
+      //     title: 'Change Password',
+      //   },
+      //   {
+      //     title: 'Privacy Policy',
+      //   },
+      //   {
+      //     title: 'Logout',
+      //   },
+      // ],
     },
     {
-      title: 'Wizard Rankings',
+      title: 'Wizard Rankings (Coming Soon)',
       icon:"trending-up-outline",
-      
+
     },
   ];
 
