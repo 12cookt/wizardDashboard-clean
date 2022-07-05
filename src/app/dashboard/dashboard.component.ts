@@ -89,9 +89,9 @@ export class DashboardComponent implements OnInit {
 
 
     )
-    console.log("before image")
+    //console.log("before image")
     this.imgUrl.image = this.getImage(tokenID.toString()).image
-    console.log("after image")
+    //console.log("after image")
     //  this.imgUrl = JSON.parse(this.wizards$[index].metadata)
   }
 
