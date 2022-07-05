@@ -56,8 +56,9 @@ export class DashboardComponent implements OnInit {
         else
           this.hasWizard = true;
         this.wizards$ = data.result;
-        this.imgUrl = JSON.parse(this.wizards$[0].metadata);
-        console.log(this.imgUrl)
+        //this.imgUrl = JSON.parse(this.wizards$[0].metadata);
+        //console.log(this.imgUrl)
+        this.imgUrl = JSON.parse(this.getImage(this.wizards$[0].token_id))
         this.getWizard(this.wizards$[0].token_id).subscribe(
           (response) => {
             this.wizard = response;
@@ -77,14 +78,35 @@ export class DashboardComponent implements OnInit {
     let currentWizard: string[] = id.split(',');
     let tokenID: number = parseInt(currentWizard[0]);
     let index: number = parseInt(currentWizard[1]);
+
     this.getWizard(tokenID).subscribe(
       (response) => {
         this.wizard = response;
       },
       (error => {
         console.log('Request failed with an error')
-      })
+      }),
+
     )
+    console.log("before image")
+      this.getImage(tokenID.toString())
+    console.log("after image")
       this.imgUrl = JSON.parse(this.wizards$[index].metadata)
+  }
+
+  getImage(tokenId: string): string{
+    const options = {method: 'GET'};
+    let image: string = '';
+
+    fetch('https://api.opensea.io/api/v1/asset/0x5139cfEE9E8533d9f52be27BE183ec60c7222274/' + tokenId + '/?include_orders=false', options)
+      .then(response => response.json())
+      .then(response => {
+        image = response.image_url.toString();
+        return image;
+      })
+      .catch(err => console.error(err))
+      .then();
+
+    return image;
   }
 }
