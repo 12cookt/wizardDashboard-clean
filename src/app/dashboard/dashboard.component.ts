@@ -58,7 +58,7 @@ export class DashboardComponent implements OnInit {
         this.wizards$ = data.result;
         //this.imgUrl = JSON.parse(this.wizards$[0].metadata);
         //console.log(this.imgUrl)
-        this.imgUrl = JSON.parse(this.getImage(this.wizards$[0].token_id))
+        this.imgUrl.image = this.getImage(this.wizards$[0].token_id).image
         this.getWizard(this.wizards$[0].token_id).subscribe(
           (response) => {
             this.wizard = response;
@@ -87,21 +87,22 @@ export class DashboardComponent implements OnInit {
         console.log('Request failed with an error')
       }),
 
+
     )
     console.log("before image")
-      this.getImage(tokenID.toString())
+    this.imgUrl.image = this.getImage(tokenID.toString()).image
     console.log("after image")
-      this.imgUrl = JSON.parse(this.wizards$[index].metadata)
+    //  this.imgUrl = JSON.parse(this.wizards$[index].metadata)
   }
 
-  getImage(tokenId: string): string{
+  getImage(tokenId: string): Metadata{
     const options = {method: 'GET'};
-    let image: string = '';
+    let image = this.imgUrl;
 
     fetch('https://api.opensea.io/api/v1/asset/0x5139cfEE9E8533d9f52be27BE183ec60c7222274/' + tokenId + '/?include_orders=false', options)
       .then(response => response.json())
       .then(response => {
-        image = response.image_url.toString();
+        image.image = response.image_url;
         return image;
       })
       .catch(err => console.error(err))
