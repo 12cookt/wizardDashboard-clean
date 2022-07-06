@@ -24,6 +24,8 @@
     "@nebular/eva-icons": "9.0.1",
     "@nebular/security": "9.0.1",
     "@nebular/theme": "^9.0.1",
+    "aws-cdk-lib": "^2.30.0",
+    "aws-sdk": "^2.1168.0",
     "bootstrap": "4.3.1",
     "eva-icons": "^1.1.2",
     "moralis": "^1.5.5",
@@ -31,6 +33,7 @@
     "rxjs": "~7.4.0",
     "truncate-eth-address": "^1.0.2",
     "tslib": "^2.3.0",
+    "util": "^0.12.4",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
