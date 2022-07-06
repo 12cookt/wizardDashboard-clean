@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { ApiWizard } from "../models/apiWizard";
 import { Observable } from "rxjs";
 import {LoginService} from "../services/login.service";
+import * as secret from "../services/secret.service";
 
 
 interface Metadata {
@@ -16,9 +17,10 @@ interface Metadata {
 })
 export class DashboardComponent implements OnInit {
 
+
   httpOptions = {
   headers: new HttpHeaders({
-    'X-API-Key': 'wKPDhl8eebesrt7pwH9g2cSC429YuovOiXx4j5XyZGY99HcqB4r8MRFnCG0AngGq'
+    'X-API-Key': secret.getSecret()
   })
 };
 
@@ -49,6 +51,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.httpOptions)
 
       this.getUsersNFTs().subscribe(data => {
         if (data.result.length == 0)
