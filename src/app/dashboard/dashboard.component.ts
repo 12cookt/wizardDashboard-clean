@@ -22,6 +22,12 @@ export class DashboardComponent implements OnInit {
   })
 };
 
+  // httpOptions = {
+  //   headers: new HttpHeaders({
+  //     'X-API-Key': secret.getSecret()
+  //   })
+  // };
+
   hasWizard: boolean = false; //hardcoded to true to bypass redirect for dev purposes
 
   wizards$: Array<any> = [];
@@ -50,6 +56,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
 
+    console.log(this.httpOptions)
       this.getUsersNFTs().subscribe(data => {
         if (data.result.length == 0)
           window.location.href = 'https://mint.wizardsofetheen.com/';
